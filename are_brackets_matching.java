@@ -55,6 +55,10 @@ class Main {
                 stack.addFirst(bracket);
             }
             else if (bracket == ')' || bracket == '}' || bracket == ']') {
+                if (stack.isEmpty()) {
+                    System.out.println("false");
+                    return;
+                }
                 popedBracket = stack.pop();
                 if (!areBracketsMatching(popedBracket, bracket)) {
                     System.out.println("false");
